@@ -1,0 +1,53 @@
+Data & Minimal Cleaning — 15 pts
+  • Exceeds (15): Loads raw slice correctly; clear 5-row preview; columns/types noted; light, well‑justified cleaning; new shape reported.
+  • Meets (12): Loads and previews; basic column info; basic cleaning; shape printed.
+  • Approaching (9): Loads but preview/notes unclear OR minimal cleaning; shape missing or incorrect.
+  • Not Yet (0): Fails to load data or no meaningful cleaning.
+
+Bipartite Graph Build — 10 pts
+  • Exceeds (10): Correct top/bottom sets; `bipartite` attributes set; no duplicates; node/edge counts printed.
+  • Meets (8): Graph builds; attributes mostly correct; counts printed.
+  • Approaching (6): Graph builds but sets mis‑labeled or duplicates present; partial counts.
+  • Not Yet (0): Graph missing or unusable.
+
+One‑Mode Projection (GC kept) — 10 pts
+  • Exceeds (10): Weighted projection from the intended side; largest connected component extracted; counts printed.
+  • Meets (8): Projection and GC mostly correct; weights used or explained.
+  • Approaching (6): Projection attempted but GC unclear/incorrect; unweighted without note.
+  • Not Yet (0): Projection missing or broken.
+
+Core Metrics (degree, path length, diameter, clustering, assortativity) — 30 pts
+  • Exceeds (30): All metrics correct (or sampled with rationale); brief, accurate interpretation; notes any limits on large graphs.
+  • Meets (24): Most metrics computed; minor omissions/errors; basic interpretation.
+  • Approaching (18): Several metrics missing or incorrect; little/no interpretation.
+  • Not Yet (0): No usable metrics.
+
+Communities & Interpretation — 10 pts
+  • Exceeds (10): Partition found; community count and top‑3 sizes; (optional) modularity; one‑sentence interpretation per top community.
+  • Meets (8): Partition and sizes reported; basic interpretation.
+  • Approaching (6): Partition produced but poorly summarized or uninterpreted.
+  • Not Yet (0): No workable communities.
+
+Five Shortest Paths — 5 pts
+  • Exceeds (5): Five valid pairs; lengths + node sequences; handles edge/no‑path cases cleanly.
+  • Meets (4): Five pairs shown; minor issues.
+  • Approaching (3): ≤3 pairs or errors shown; unclear paths.
+  • Not Yet (0): Missing or incorrect.
+
+Subgraph Visualization — 10 pts
+  • Exceeds (10): Top‑50 (by weighted degree) subgraph; labels top‑10; readable layout; clear caption/legend.
+  • Meets (8): Readable plot with minimal labels.
+  • Approaching (6): Cluttered or poorly labeled plot.
+  • Not Yet (0): No usable visualization.
+
+Mini Write‑up — 8 pts
+  • Exceeds (8): Concise, accurate narrative on structure, communities, and one surprising finding.
+  • Meets (6): Covers required points; mostly clear.
+  • Approaching (4): Superficial or missing one component.
+  • Not Yet (0): Absent or off‑topic.
+
+LLM Usage Log — 2 pts
+  • Exceeds (2): 2–3 prompts pasted; clear note on what was accepted vs. modified.
+  • Meets (1): Prompts included; brief summary.
+  • Approaching (0): Vague or incomplete log.
+  • Not Yet (0): No log.
