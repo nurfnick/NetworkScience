@@ -1,0 +1,146 @@
+ % $Header: /cvsroot/latex-beamer/latex-beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 1.7 2007/01/28 20:48:23 tantau Exp $
+\documentclass[xcolor=pdftex,dvipsnames,table]{beamer}
+%\documentclass[amscd,amssymb,11pt]{beamer}
+
+\usepackage{xfrac}
+\usepackage{float}
+\usepackage{pgf,tikz}
+\usetikzlibrary{trees}
+\usetikzlibrary{arrows}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+\mode<presentation>
+{
+  \usetheme{Copenhagen}
+\usecolortheme[RGB={255,82,0}]{structure}
+%\usetheme{Madrid}
+}
+
+\usepackage[all]{xy}
+
+\newtheorem{Thm}{Theorem}[section]
+\newtheorem{Main}{Main Theorem}
+\renewcommand{\theMain}{}
+\newtheorem{Cor}[Thm]{Corollary}
+\newtheorem{Lem}[Thm]{Lemma}
+\newtheorem{Prop}[Thm]{Proposition}
+\newtheorem{Def}[Thm]{Definition}
+\newtheorem{Rmk}[Thm]{Remark}
+\newtheorem{Obs}[Thm]{Observation}
+\newtheorem{Con}[Thm]{Conjecture}
+\newtheorem{Exam}[Thm]{Example}
+\newtheorem{Claim}[Thm]{Claim}
+\newtheorem{Q}[Thm]{Question}
+
+\renewcommand{\P}{\Phi}
+\newcommand{\p}{\phi}
+\renewcommand{\a}{\alpha}
+\renewcommand{\l}{\lambda}
+\renewcommand{\o}{\omega}
+\newcommand{\X}{\mathcal X}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\div}{{\rm div}}
+\newcommand{\curl}{{\rm curl}}
+\newcommand{\grad}{{\rm grad}}
+\newcommand{\dif}{{\ \mathrm{d}}}
+\renewcommand{\L}{\Lambda}
+\renewcommand{\r}{\rho}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\M}{\mathcal{M}_l}
+\newcommand{\dsp}{\displaystyle}
+
+\usepackage{color}
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[latin1]{inputenc}
+% or whatever
+
+\usepackage{hyperref}
+\hypersetup{pdfnewwindow=true, pdffitwindow=true}
+
+\title[Data Mining] 
+{What is Clustering}
+\author{Nicholas C. Jacob}
+\date{\today}
+
+
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+%  \titlepage
+\end{frame}
+\begin{frame}{Making Clusters}
+\begin{itemize}
+\item Biology
+\item Information Retrieval
+\item Climate
+\item Medicine
+\item Business
+\end{itemize}
+\end{frame}
+
+\begin{frame}{But What About Data?}
+
+\includegraphics[width = \textwidth]{clusters.png}
+
+Gonna have to tune...
+\end{frame}
+\begin{frame}{New Learning}
+The methods all describe up till now in this course have assumed you knew the answer to the data you had.   This is supervised learning.  Here we will not know the answer as to which cluster things belong before we start.  We are entering unsupervised learning!
+\end{frame}
+
+\begin{frame}{Partitional vs Hierarchical}
+\begin{itemize}
+\item Divide the data into distinct partitions
+\item Give the data finer distinctions
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Different Clusters}
+\begin{itemize}
+\item Well-Separated \includegraphics[width = 0.225\textwidth]{clustering2.png}
+\item Prototype Based
+\item Graph Based
+\item Density Based \includegraphics[width = 0.25\textwidth]{clustering4.png}
+\item Shared Properties
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Some Methods We'll See}
+\begin{itemize}
+\item K-means
+\item Agglomerative Hierarchical Clustering
+\item DBSCAN
+\end{itemize}
+
+\end{frame}
+
+ \begin{frame}{Check Your Knowledge}
+Why might we be interested in unsupervised learning?
+ \end{frame}
+ 
+\end{document}
+
+
