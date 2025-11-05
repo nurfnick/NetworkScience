@@ -101,6 +101,41 @@
 \item Maximize Friends
 \item Minimize Strangers
 \end{itemize} 
+\item Frustrated Choice (Cannot Max/Min both)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Robustness}
+\begin{itemize}
+\item A node is {\bf robust} if its current community is unambiguously preferred over all other communities.
+
+\item For a given partition, the robustness will be the fraction of nodes that there is no better move for.
+\end{itemize}
+\end{frame}
+\begin{frame}{Familiarity Index}
+\[
+F_i(C_A,C_B) = \frac{\Delta d}{\Delta d + \Delta \hat d}
+\]
+\begin{itemize}
+\item $F>1$ or $F<0$ you should make that change
+\item $0<F<1$ are frustrated choices
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resolution Perspective}
+\[
+v_{ij} = \left(A_{ij} - \gamma\right)\delta_{v_i,v_j\in C_k}
+\]
+
+Can vary $\gamma$:
+\begin{itemize}
+\item $\gamma = 0$ ignores strangers
+\item $\gamma = 1$ ignores friends
+\item Frustrated nodes 
+\begin{itemize}
+\item $\gamma<F_i$ go to more friends
+\item $\gamma>F_i$ go to less strangers
+\end{itemize}
 \end{itemize}
 \end{frame}
 
