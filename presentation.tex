@@ -122,7 +122,8 @@ F_i(C_A,C_B) = \frac{\Delta d}{\Delta d + \Delta \hat d}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Resolution Perspective}
+\begin{frame}{Constant Potts Model}
+Comes from an analog of the Hamiltonian for the magnetic spin in statistical mechanics.
 \[
 v_{ij} = \left(A_{ij} - \gamma\right)\delta_{v_i,v_j\in C_k}
 \]
@@ -139,7 +140,35 @@ Can vary $\gamma$:
 \end{itemize}
 \end{frame}
 
-
+\begin{frame}{Game Theory}
+\begin{itemize}
+\item Agents (nodes here) act selfishly
+\item Cooperation happens (stable communities emerge)
+\item Nash Equilibrium happens
+\item Equilibrium is beneficial for collective
+\end{itemize}
+\end{frame}
+\begin{frame}{Hedonism}
+\begin{itemize}
+\item Hedonic Potential created
+\item Utility Functions can be computed in polynomial time
+\item Three scales:
+\begin{enumerate}
+\item Node
+\[
+\varphi^\gamma_i\left(C_k\right) = \sum_{j\in C_k}v_{ij}
+\]
+\item Community
+\[
+\phi^\gamma\left(C_k\right) = \frac12\sum_{i\in C_k}\sum_{j\in C_k}v_{ij}
+\]
+\item Partition
+\[
+\Phi^\gamma(\pi) = \sum_{k=1}^K\phi^{\gamma}\left(C_k\right) = \left(1-\gamma\right)\sum_{k=1}^K m_k - \gamma\sum_{k=1}^K\left(\binom{n_k}2 - m_k\right)
+\]
+\end{enumerate}
+\end{itemize}
+\end{frame}
  
 \end{document}
 
