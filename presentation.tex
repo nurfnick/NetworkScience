@@ -14,6 +14,10 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{multicol}
+%\usepackage{cite}
+%\usepackage[backend=biber,style=authoryear]{biblatex} % Or \usepackage{harvard} for older styles
+%\addbibresource{report.bib} % Use \addbibresource with biblatex
+
 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
 
@@ -78,7 +82,7 @@
 \hypersetup{pdfnewwindow=true, pdffitwindow=true}
 
 \title[Community Detection] 
-{From Leiden to Pleasure Island:  The Constant Potts Model for Community Detection as a Hedonic Game\\ L.L. Felipe, K. Avrachenkov, D.S. Menasch\'e}
+{From Leiden to Pleasure Island:  The Constant Potts Model for Community Detection as a Hedonic Game\\ L.L. Felipe, K. Avrachenkov, D.S. Menasch\'e} 
 \author{Nicholas C. Jacob}
 \date{\today}
 
@@ -90,8 +94,9 @@
 \begin{frame}
 \maketitle
 %  \titlepage
+\nocite{FELIPE2025130989}
 \end{frame}
-\begin{frame}{Clusters or Community}
+\begin{frame}{Motivation:  Clusters or Community}
 \begin{itemize}
 \item Unsupervised Machine Learning Technique
 \item Networks
@@ -105,14 +110,14 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Robustness}
+\begin{frame}{Background:  Robustness}
 \begin{itemize}
 \item A node is {\bf robust} if its current community is unambiguously preferred over all other communities.
 
 \item For a given partition, the robustness will be the fraction of nodes that there is no better move for.
 \end{itemize}
 \end{frame}
-\begin{frame}{Familiarity Index}
+\begin{frame}{Background:  Familiarity Index}
 \[
 F_i(C_A,C_B) = \frac{\Delta d}{\Delta d + \Delta \hat d}
 \]
@@ -122,7 +127,8 @@ F_i(C_A,C_B) = \frac{\Delta d}{\Delta d + \Delta \hat d}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Resolution Perspective}
+\begin{frame}{Background:  Constant Potts Model}
+Comes from an analog of the Hamiltonian for the magnetic spin in statistical mechanics.
 \[
 v_{ij} = \left(A_{ij} - \gamma\right)\delta_{v_i,v_j\in C_k}
 \]
@@ -139,8 +145,99 @@ Can vary $\gamma$:
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Methodology:  Game Theory}
+\begin{itemize}
+\item Agents (nodes here) act selfishly
+\item Cooperation happens (stable communities emerge)
+\item Nash Equilibrium happens
+\item Equilibrium is beneficial for collective
+\end{itemize}
+\end{frame}
+\begin{frame}{Methodology:  Hedonism}
+\begin{itemize}
+\item Hedonic Potential created
+\item Utility Functions can be computed in polynomial time
+\item Three scales:
+\begin{enumerate}
+\item Node
+\[
+\varphi^\gamma_i\left(C_k\right) = \sum_{j\in C_k}v_{ij}
+\]
+\item Community
+\[
+\phi^\gamma\left(C_k\right) = \frac12\sum_{i\in C_k}\sum_{j\in C_k}v_{ij}
+\]
+\item Partition
+\[
+\Phi^\gamma(\pi) = \sum_{k=1}^K\phi^{\gamma}\left(C_k\right) = \left(1-\gamma\right)\sum_{k=1}^K m_k - \gamma\sum_{k=1}^K\left(\binom{n_k}2 - m_k\right)
+\]
+\end{enumerate}
+\end{itemize}
+\end{frame}
 
+\begin{frame}{Methodology:  Leiden Algorithm}
+\begin{enumerate}
+\item Local Moving of Nodes:  Uses a random queue and only looks at moving neighbors after evaluating a node
+\item Refinement or Partition:  Look into a community and makes random but improving choices (not greedy!)
+\item Aggregation of Network:  Take the refinements and reorganize them into communities  
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Methodology:  Game Equilibrium}
+\begin{itemize}
+\item Stability (or Equilibrium)
+\begin{itemize}
+\item Internally Stable Communities:  No node inside a community has incentive to leave
+\item Externally Stable Communities:  No node outside community has incentive to join
+\item Locally Stable Node: Nodes do not have incentive to deviate
+\end{itemize}
+\item Solution is partition with all nodes locally stable
+\end{itemize}
+\end{frame}
  
+\begin{frame}{Results and Findings: Overview}
+\begin{itemize}
+\item $\gamma$ is rational
+\item Guaranteed convergence 
+\item pseudo-polynomial time
+\end{itemize}
+
+Why?
+\begin{itemize}
+\item $\Phi$ is bounded within $[-n^2,n^2]$ and increasing
+\item Since $\gamma = \dfrac bc$, each beneficial node increases potential by $\dfrac1c$.
+\item Convergence happens in $O(cn^2)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Results and Findings: Pseudo Code}
+\includegraphics[width = 0.9\textwidth]{code.png}
+\end{frame}
+
+\begin{frame}{Results and Findings:  Evaluation}
+\includegraphics[width = 0.9\textwidth]{graphs.png}
+\end{frame}
+
+
+
+\begin{frame}{Critical Reflection}
+\begin{itemize}
+\item New/Novel Results
+\item Convergence
+\item Cascading Levels Interesting Approach
+\item Excellent use of Kuhn's `Normal Science'
+\item Feel of Meta-Heuristics
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Citations}
+\begin{itemize}
+\item Felipe, L. L., Avrachenkov, K., \& Menasch\`e, D. S. (2025). From Leiden to Pleasure Island: The Constant Potts Model for community detection as a hedonic game. Physica A: Statistical Mechanics and its Applications, 680, 130989. https://doi.org/10.1016/j.physa.2025.130989
+\item Kuhn, T. S. (2012). The Structure of Scientific Revolutions (50th Anniversary ed.). Chicago: University of Chicago Press.
+\end{itemize}
+
+\end{frame}
 \end{document}
 
 
